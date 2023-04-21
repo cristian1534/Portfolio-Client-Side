@@ -8,12 +8,14 @@ jobs:
   build:
    runs-on: ubuntu-latest
    steps:
-    - uses: actions/checkout@v1
-    - name: Build
+    - name: Clone and check current branch out.
+      uses: actions/checkout@v1
       env:
         NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
         NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-      run:
-        npm
-        npm run build
-        npx netlify-cli deploy --dir=public --prod
+    - name: Install dependencies.
+      run: npm install
+    - name: Install dependencies.
+      run: npm run build
+    - name: Deployment.
+      run: npx netlify-cli deploy --dir=public --prod

@@ -33,7 +33,7 @@ const Services = () => {
               Freelance Development applying the latest DevOps technologies.
             </h3>
             <a
-              href="https://it-devs.tech/presupuesto"
+              href="https://www.it-devs.tech/presupuesto"
               target="_blank"
               rel="noreferrer"
             >
@@ -64,7 +64,7 @@ const Services = () => {
                     </p>
                     <div className="flex flex-col flex-1 items-end">
                       <a
-                        href="https://it-devs.tech/servicios"
+                        href="https://www.t-devs.tech/servicios"
                         className="btn w-9 h-9 mb-[42px] flex justify-center items-center"
                         target="_blank"
                         rel="noreferrer"
@@ -72,7 +72,7 @@ const Services = () => {
                         <BsArrowUpRight />
                       </a>
                       <a
-                        href="https://it-devs.tech/servicios"
+                        href="https://www.it-devs.tech/servicios"
                         target="_blank"
                         rel="noreferrer"
                         className="text-gradient text-sm"

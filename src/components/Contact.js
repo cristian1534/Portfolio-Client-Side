@@ -4,6 +4,7 @@ import { fadeIn } from "../variants";
 import { Slide, ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useForm } from "react-hook-form";
+import axios from "axios";
 
 const Contact = () => {
   const [contact, setContact] = useState({});
@@ -18,10 +19,17 @@ const Contact = () => {
     toast(`Thank you ${name}, I will answer your message soon!`);
   };
 
-  const onSubmit = (contact) => {
+  const onSubmit = async (contact) => {
     setContact({ ...contact, contact });
-    notify(contact.name);
-    document.getElementById("form").reset();
+    await axios
+      .post(
+        "https://portfolio-backend-service-8k8u.onrender.com/create-message",
+        contact
+      )
+      .then(() => {
+        notify(contact.name);
+        document.getElementById("form").reset();
+      });
   };
 
   return (

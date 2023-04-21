@@ -1,4 +1,4 @@
-name: Pushing to Netifly for Deployment.
+name: Pushing to NETLIFY for Deployment.
 on: 
   push:
     branches: ['master']

@@ -1,27 +1,20 @@
-import React from "react";
+import React, { lazy, Suspense } from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 // components
-import Banner from "./components/Banner";
-import Header from "./components/Header";
-import Nav from "./components/Nav";
-import About from "./components/About";
-import Services from "./components/Services";
-import Work from "./components/Work";
-import Contact from "./components/Contact";
-import Stack from "./components/Stack";
+
+const Home = lazy(() => import("./pages/Home"));
+const Admin = lazy(() => import("./pages/Admin"));
 
 const App = () => {
   return (
-    <div className="bg-site bg-no-repeat bg-cover overflow-hidden">
-      <Header />
-      <Banner />
-      <Nav />
-      <About />
-      <Stack/>
-      <Services />
-      <Work />
-      <Contact />
-      <div className="h-[50px]"></div>
-    </div>
+    <Suspense fallback={<div>Loading...</div>}>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/admin" element={<Admin />} />
+        </Routes>
+      </BrowserRouter>
+    </Suspense>
   );
 };
 

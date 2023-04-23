@@ -13,7 +13,11 @@ const Messages = ({ messages }) => {
       .delete(
         `https://portfolio-backend-service-8k8u.onrender.com/delete-message/${id}`
       )
-      .then(() => notify());
+      .then(() => {
+        notify()
+        window.location.reload();
+      });
+
   };
 
   const notify = () => {

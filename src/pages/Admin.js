@@ -2,9 +2,11 @@ import React, { useEffect, useState } from "react";
 import Messages from "../components/Messages";
 import Logo from "../assets/logo.png";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const Admin = () => {
   const [messages, setMessages] = useState([]);
+  const navigate = useNavigate();
 
   const fetch_messages = async () => {
     const { data } = await axios.get(
@@ -16,6 +18,11 @@ const Admin = () => {
     fetch_messages();
   }, []);
 
+  const handle_logout = () => {
+    localStorage.removeItem("auth-admin");
+    navigate("/")
+  }
+
   return (
     <section className="bg-site bg-site bg-no-repeat bg-cover overflow-hidden">
       <div className="py-8">
@@ -24,7 +31,7 @@ const Admin = () => {
             <a href="/">
               <img src={Logo} alt="" width={90} className="mx-auto" />
             </a>
-            <button className="btn btn-sm">Logout</button>
+            <button className="btn btn-sm" onClick={() => handle_logout()}>Logout</button>
           </div>
         </div>
       </div>

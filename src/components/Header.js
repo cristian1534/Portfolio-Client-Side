@@ -6,7 +6,7 @@ const Header = () => {
     <div className="py-8">
       <div className="container mx-auto">
         <div className="flex justify-between items-center">
-          <a href="/">
+          <a href="/login">
             <img src={Logo} alt="" width={90} className="mx-auto" />
           </a>
           <a href={CV} download="IT-CV-Cristian-2023.pdf">

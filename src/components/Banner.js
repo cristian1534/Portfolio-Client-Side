@@ -66,10 +66,10 @@ const Banner = () => {
               </a>
             </div>
             <div className="flex text-[-20px] gap-x-6 max-w-max mx-auto lg:mx-0">
-              <a href="/">
+              <a href="https://www.github.com/cristian1534">
                 <FaGithub />
               </a>
-              <a href="/">
+              <a href="https://www.linkedin.com/mwlite/in/cristian-machuca-8883a01b2">
                 <FaLinkedin />
               </a>
             </div>

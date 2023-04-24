@@ -65,11 +65,23 @@ const Banner = () => {
                 My Linkedln
               </a>
             </div>
-            <div className="flex text-[-20px] gap-x-6 max-w-max mx-auto lg:mx-0">
-              <a href="https://www.github.com/cristian1534">
+            <div
+              className="flex text-[-20px] gap-x-6 max-w-max mx-auto lg:mx-0"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <a
+                href="https://www.github.com/cristian1534"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <FaGithub />
               </a>
-              <a href="https://www.linkedin.com/mwlite/in/cristian-machuca-8883a01b2">
+              <a
+                href="https://www.linkedin.com/mwlite/in/cristian-machuca-8883a01b2"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <FaLinkedin />
               </a>
             </div>

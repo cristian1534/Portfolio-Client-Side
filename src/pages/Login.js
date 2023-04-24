@@ -8,6 +8,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 const Login = () => {
+  // eslint-disable-next-line
   const [admin, setAdmin] = useState({});
   const {
     register,
@@ -16,7 +17,7 @@ const Login = () => {
   } = useForm();
 
   const notify_access = () => {
-    toast.success("Welcome!");
+    toast.success("Welcome Administrator!");
   };
 
   
@@ -33,7 +34,7 @@ const Login = () => {
         localStorage.setItem("auth-admin", session_token);
         document.getElementById("form").reset();
         notify_access();
-        navigate("/admin");
+        setTimeout(() => {navigate("/admin")}, 4000)
       })
    }catch(error) {
     return toast.error("Email or Password wrong.")
@@ -42,7 +43,7 @@ const Login = () => {
   };
 
   return (
-    <section className="py-16 lg:section bg-site " id="contact">
+    <section className="py-16 lg:section bg-site bg-no-repeat bg-cover overflow-hidden " id="contact">
       <div className="container mx-auto">
         <div className="flex flex-col lg:flex-row">
           <motion.div
@@ -121,6 +122,7 @@ const Login = () => {
           </form>
         </div>
       </div>
+      <div className="h-[45Vh]"></div>
     </section>
   );
 };

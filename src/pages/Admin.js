@@ -8,20 +8,21 @@ const Admin = () => {
   const [messages, setMessages] = useState([]);
   const navigate = useNavigate();
 
-  const fetch_messages = async () => {
-    const { data } = await axios.get(
-      "https://portfolio-backend-service-8k8u.onrender.com/get-messages"
-    );
-    setMessages(data);
-  };
   useEffect(() => {
+    
+    const fetch_messages = async () => {
+      const { data } = await axios.get(
+        "https://portfolio-backend-service-8k8u.onrender.com/get-messages",
+      );
+      setMessages(data);
+    };
     fetch_messages();
   }, []);
 
   const handle_logout = () => {
     localStorage.removeItem("auth-admin");
-    navigate("/")
-  }
+    navigate("/");
+  };
 
   return (
     <section className="bg-site bg-site bg-no-repeat bg-cover overflow-hidden">
@@ -31,7 +32,9 @@ const Admin = () => {
             <a href="/">
               <img src={Logo} alt="" width={90} className="mx-auto" />
             </a>
-            <button className="btn btn-sm" onClick={() => handle_logout()}>Logout</button>
+            <button className="btn btn-sm" onClick={() => handle_logout()}>
+              Logout
+            </button>
           </div>
         </div>
       </div>

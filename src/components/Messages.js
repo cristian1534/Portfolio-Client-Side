@@ -15,7 +15,7 @@ const Messages = ({ messages }) => {
       )
       .then(() => {
         notify()
-        window.location.reload();
+        setTimeout(() => { window.location.reload() }, 4000)
       });
 
   };

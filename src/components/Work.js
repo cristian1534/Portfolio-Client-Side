@@ -4,6 +4,8 @@ import { fadeIn } from "../variants";
 import Img1 from "../assets/it-devs.png";
 import Img2 from "../assets/nico.png";
 import Img3 from "../assets/hna.png";
+import Img4 from "../assets/segur-app.png";
+import Img5 from "../assets/backend-ong.png";
 
 const Work = () => {
   return (
@@ -39,11 +41,38 @@ const Work = () => {
                   />
                   <div className="absolute -bottom-full left-14 group-hover:bottom-10 group-hover:bg-black/90 group-hover:rounded group-hover:p-3 transition-all duration-700 z-50">
                   <a href="https://www.it-devs.tech" target="_blank" rel="noreferrer">
-                  <span className="text-gradient">IT-DEVS.TECH</span>
+                  <span className="text-gradient">WWW.IT-DEVS.TECH</span>
                   </a>
                     <div>
                       <span className="text-3xl text-white">
                         Personal Freelance Website
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+            <motion.div
+              variants={fadeIn("right", 0.3)}
+              initial="hidden"
+              whileInView={"show"}
+              viewport={{ once: false, amount: 0.3 }}
+              className="flex-1"
+            >
+              <div className="group relative overflow-hidden border-2 border-white/50 rounded-xl">
+                <div className="group-hover:bg-black/70 w-full h-full absolutez-40 transition-all duration-300">
+                  <img
+                    src={Img4}
+                    alt=""
+                    className="group-hover:scale-125 transition-all duration-500"
+                  />
+                  <div className="absolute -bottom-full left-14 group-hover:bottom-10 group-hover:bg-black/90 group-hover:rounded group-hover:p-3 transition-all duration-700 z-50">
+                  <a href="https://www.segur-app.netlify.app/" target="_blank" rel="noreferrer">
+                  <span className="text-gradient uppercase">WWW.SEGUR-APP.netlify</span>
+                  </a>
+                    <div>
+                      <span className="text-3xl text-white">
+                        Security service.
                       </span>
                     </div>
                   </div>
@@ -100,6 +129,35 @@ const Work = () => {
                         Personal Training with backoffice
                       </span>
                       <p>Deployment in progress</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+            
+            <motion.div
+              variants={fadeIn("right", 0.3)}
+              initial="hidden"
+              whileInView={"show"}
+              viewport={{ once: false, amount: 0.3 }}
+              className="flex-1"
+              style={{marginTop:"3rem"}}
+            >
+              <div className="group relative overflow-hidden border-2 border-white/50 rounded-xl">
+                <div className="group-hover:bg-black/70 w-full h-full absolutez-40 transition-all duration-300">
+                  <img
+                    src={Img5}
+                    alt=""
+                    className="group-hover:scale-125 transition-all duration-500"
+                  />
+                  <div className="absolute -bottom-full left-14 group-hover:bottom-10 group-hover:bg-black/90 group-hover:rounded group-hover:p-3 transition-all duration-700 z-50">
+                  <a href="https://www.backend-ong-service.onrender.com/api/v1/docs/" target="_blank" rel="noreferrer">
+                    <span className="text-gradient">BACKEND MICROSERVICIOS</span>
+                    </a>
+                    <div>
+                      <span className="text-3xl text-white">
+                        No Country
+                      </span>
                     </div>
                   </div>
                 </div>

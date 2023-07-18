@@ -1,28 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { fadeIn } from "../variants";
 
 const Work = ({ cardsData }) => {
+  const initialCardsToShow = 6; // Número de cards a mostrar inicialmente
+  const [cardsToShow, setCardsToShow] = useState(initialCardsToShow);
+
+  const handleShowMoreCards = () => {
+    const remainingCards = cardsData.length - cardsToShow;
+    setCardsToShow(
+      (prevCardsToShow) =>
+        prevCardsToShow + Math.min(initialCardsToShow, remainingCards)
+    );
+  };
+
   return (
     <section className="section" id="work">
       <div className="container mx-auto">
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3">
-          <div>
-            <h2 className="h2 leading-tight text-accent">
-              My Latest
-              <br />
-              Work.
-            </h2>
-            <p className="max-w mb-16">
-              Check my Github for all Frontend, Backend and DevOps projects.
-            </p>
-            <a href="https://github.com/cristian1534" target="_blank" rel="noreferrer">
-              <button className="btn btn-sm">View all projects</button>
-            </a>
-          </div>
-
-          {/* Loop through the cardsData array to generate dynamic cards */}
-          {cardsData.map((card, index) => (
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 mb-12">
+          {cardsData.slice(0, cardsToShow).map((card, index) => (
             <motion.div
               key={index}
               variants={fadeIn("right", 0.3)}
@@ -43,9 +39,12 @@ const Work = ({ cardsData }) => {
                       <span className="text-gradient">{card.title}</span>
                     </a>
                     <div>
-                      <span className="text-3xl text-white">{card.description}</span>
-                      {/* You can add more information if needed */}
-                      {card.status && <p className="text-white">{card.status}</p>}
+                      <span className="text-3xl text-white">
+                        {card.description}
+                      </span>
+                      {card.status && (
+                        <p className="text-white">{card.status}</p>
+                      )}
                     </div>
                   </div>
                 </div>
@@ -53,6 +52,12 @@ const Work = ({ cardsData }) => {
             </motion.div>
           ))}
         </div>
+
+        {cardsToShow < cardsData.length && (
+          <button className="btn btn-sm mt-6" onClick={handleShowMoreCards}>
+            View More
+          </button>
+        )}
       </div>
     </section>
   );

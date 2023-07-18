@@ -49,7 +49,7 @@ const cardsData = [
     imgSrc: require("../assets/walletClient.png"),
     title: "Virtual Wallet Client",
     description: "Microservice Client for Virtual Wallet",
-    url: "https://app.netlify.com/sites/pinguiwallet/deploys",
+    url: "https://pinguiwallet.netlify.app",
   },
   {
     imgSrc:require("../assets/walletServer.png"),

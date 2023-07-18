@@ -18,7 +18,7 @@ const services = [
 
 const Services = () => {
   return (
-    <section className="section" id="services">
+    <section className="section" id="services" style={{marginBottom: "7rem"}}>
       <div className="container mx-auto">
         <div className="flex flex-col lg:flex-row">
           <motion.div

@@ -68,6 +68,12 @@ const cardsData = [
     title: "ENLACE-ONG",
     description: "No Country ENLACE-ONG Jobs Project",
     url: "https://enlace-ong.vercel.app/",
+  },
+  {
+    imgSrc: require("../assets/WALLET-TS.png"),
+    title: "WALLET-TS",
+    description: "REST API Hexagonal NODE TS",
+    url: "https://wallet-ts.onrender.com/api/v1/docs/",
   }
 ];
 

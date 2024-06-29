@@ -30,7 +30,7 @@ const Banner = () => {
             >
               <TypeAnimation
                 sequence={[
-                  "Fullstack Developer",
+                  "Software Engineer",
                   2000,
                   "with",
                   2000,
